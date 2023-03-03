@@ -1,0 +1,4 @@
+github.com/ldez/go-git-cmd-wrapper/v2 v2.4.0 h1:+Xd+Gt8uv407ZYqAkywJAJcNaWQu+1HTUcHJYOZWU80=
+github.com/ldez/go-git-cmd-wrapper/v2 v2.4.0/go.mod h1:whnaSah+AmezZS8vwp8FyFzEBHZCLKywWILUj5D8Jq0=
+golang.org/x/exp v0.0.0-20230224173230-c95f2b4c22f2 h1:Jvc7gsqn21cJHCmAWx0LiimpP18LZmUxkT5Mp7EZ1mI=
+golang.org/x/exp v0.0.0-20230224173230-c95f2b4c22f2/go.mod h1:CxIveKay+FTh1D0yPZemJVgC/95VzuuOLq5Qi4xnoYc=
