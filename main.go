@@ -79,6 +79,7 @@ func main() {
 
 	// Cherry pick (icommit,latestcommit] with changes.
 	// defer cherry-pick --abort
+	cherryPickAbort()
 	cherryPickCommits(icommit, commits[0])
 	defer cherryPickAbort()
 
@@ -114,7 +115,7 @@ func branchCurrent() string {
 		g.AddOptions("HEAD")
 	})
 	if err != nil {
-		panic(err)
+		panic(branch + err.Error())
 	}
 	return strings.TrimSuffix(branch, "\n")
 }
@@ -125,7 +126,7 @@ func branchList() []string {
 		g.AddOptions("-l")
 	})
 	if err != nil {
-		panic(err)
+		panic(branches + err.Error())
 	}
 	for _, v := range strings.Split(branches, "\n") {
 		if v == "" {
@@ -158,7 +159,7 @@ func commitMsg(commit string) string {
 	)
 	msg, err := g.Exec(context.Background(), g.Base, g.Debug, g.Options...)
 	if err != nil {
-		panic(err)
+		panic(msg + err.Error())
 	}
 	return msg
 }
@@ -174,7 +175,7 @@ func allCommits(b string) []string {
 	)
 	s, err := g.Exec(context.Background(), g.Base, g.Debug, g.Options...)
 	if err != nil {
-		panic(err)
+		panic(s + err.Error())
 	}
 	var commmits []string
 	for _, v := range strings.Split(s, "\n") {
@@ -196,9 +197,9 @@ func cherryPickCommits(c1, c2 string) {
 			g.AddOptions(c1 + ".." + c2)
 		}}...,
 	)
-	_, err := g.Exec(context.Background(), g.Base, g.Debug, g.Options...)
+	out, err := g.Exec(context.Background(), g.Base, g.Debug, g.Options...)
 	if err != nil {
-		panic(err)
+		panic(out + err.Error())
 	}
 }
 
