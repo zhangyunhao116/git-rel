@@ -14,13 +14,26 @@ import (
 var forcepush = flag.Bool("f", false, "force push release branch")
 
 func main() {
-	flag.Parse()
-	if len(os.Args) < 2 || len(flag.Args()) < 1 {
-		panic("no icommit")
-	}
-	icommit := flag.Args()[0] // e.g. "f2fe3c80141d5febf72e1ca78e0a79dd9a10d233"
 	cbranch := branchCurrent()
 	rbranch := releaseBranchName(cbranch)
+
+	flag.Parse()
+	cfg := NewConfig()
+	defer cfg.Save()
+	var icommit string // e.g. "f2fe3c80141d5febf72e1ca78e0a79dd9a10d233"
+	if len(os.Args) < 2 || len(flag.Args()) < 1 {
+		// Use saved icommit.
+		v, ok := cfg.Get(cbranch)
+		if !ok {
+			panic("no icommit (the latest commit you don't want to merge)")
+		}
+		println("Use history icommit:" + v)
+		icommit = v
+	} else {
+		// Use command line icommit.
+		icommit = flag.Args()[0]
+		cfg.Add(cbranch, icommit)
+	}
 
 	// Check arguments.
 	if !slices.Contains(allCommits(cbranch), icommit) {

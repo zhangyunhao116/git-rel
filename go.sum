@@ -1,4 +1,8 @@
 github.com/ldez/go-git-cmd-wrapper/v2 v2.4.0 h1:+Xd+Gt8uv407ZYqAkywJAJcNaWQu+1HTUcHJYOZWU80=
 github.com/ldez/go-git-cmd-wrapper/v2 v2.4.0/go.mod h1:whnaSah+AmezZS8vwp8FyFzEBHZCLKywWILUj5D8Jq0=
+github.com/zhangyunhao116/fastrand v0.3.0 h1:7bwe124xcckPulX6fxtr2lFdO2KQqaefdtbk+mqO/Ig=
+github.com/zhangyunhao116/fastrand v0.3.0/go.mod h1:0v5KgHho0VE6HU192HnY15de/oDS8UrbBChIFjIhBtc=
+github.com/zhangyunhao116/skipmap v0.10.1 h1:CMH4yGZQESBM1kUNozQqQ+Ra2pKqwF3HxaTADOaIfPs=
+github.com/zhangyunhao116/skipmap v0.10.1/go.mod h1:CClnLPHl3DI+hHgrcy0OZ/QJ45AWgA3ObVcQyJop12c=
 golang.org/x/exp v0.0.0-20230224173230-c95f2b4c22f2 h1:Jvc7gsqn21cJHCmAWx0LiimpP18LZmUxkT5Mp7EZ1mI=
 golang.org/x/exp v0.0.0-20230224173230-c95f2b4c22f2/go.mod h1:CxIveKay+FTh1D0yPZemJVgC/95VzuuOLq5Qi4xnoYc=
